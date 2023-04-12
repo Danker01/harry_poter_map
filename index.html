@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: black;
+		}
+		.main{
+			position: relative;
+			overflow: hidden;
+		}
+		.map{
+			background-image: url(images/map_background.jpg);
+			background-repeat: no-repeat;
+			width: 1018px;
+			height: 635px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.lefth{
+			position: absolute;
+			top:0px;
+			left: -520px;
+			width: 50%;
+			height: 635px;
+			background: black;
+			background-image: url(images/left_cover.jpg);
+			background-repeat: no-repeat;
+			background-position: top right;
+			animation: L 5s ease;
+		}
+		.righth{
+			position: absolute;
+			top:0px;
+			right: -520px;
+			width: 50%;
+			height: 635px;
+			background: black;
+			background-image: url(images/right_cover.jpg);
+			background-repeat: no-repeat;
+			background-position: top left;
+			animation: R 5s ease;
+		}
+		@keyframes R{
+			0%{right:0;}
+			100%{right: -520px;}
+		}
+		@keyframes L{
+			0%{left:0;}
+			100%{left: -520px;}
+		}
+		ul{
+			position: relative;
+		}
+		.pointer{
+			position: absolute;
+			background-color: rgba(137, 118, 80, 0.5);
+			height: 100px;
+			width: 100px;
+			border: black 1px solid;
+			border-radius: 50% 50% 0 50%;
+			transform: rotate(45deg);
+		}
+		.pointer a{
+			color: white;
+			position: absolute;
+			text-decoration: none;
+			height: 100px;
+			width: 100px;
+			padding-top: 25px;
+			padding-left: 35px;
+			transform: rotate(-45deg);
+		}
+		.info{
+			position: absolute;
+			height: 550px;
+			width: 550px;
+			background: rgba(255, 255, 0, 0.8);
+			border-radius: 50%;
+			left: 250px;
+			top: -125px;
+			font-size: 25px;
+			transform: scale(0.1);
+			opacity: 0;
+			transition: all 2s ease;
+			list-style: none;
+		}
+		.info:target{
+			transform: scale(1);
+			opacity: 1;
+			transition: all 2s ease;
+		}
+		.info p{
+			margin-top: 138px;
+			margin-left: 69px;
+			height: 412px;
+			width: 412px;
+			border-radius: 50%;
+			top: 69px;
+			left: 69px;
+		}
+		.close{
+			position: absolute;
+			left: 447px;
+			background-color: black;
+			height: 35px;
+			width: 35px;
+		}
+		img{
+			position: absolute;
+			height: 550px;
+			width: 550px;
+			border-radius: 50%;
+			opacity: 1;
+			transition: all 2s ease;
+		}
+		.ddd{
+			opacity: 0;
+			transition: all 2s ease;
+		}
+		.info:hover img{opacity: 0; transition: all 2s ease;}
+		.info:hover .ddd{opacity: 1; transition: all 2s ease;}
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<section class="map" id="close">
+			<ul>
+				<li><p class="pointer" style="top: 175px;left: 100px;"><a href="#1">Крихтлива<br>Хіжина</a></p></li>
+				<li><p class="pointer" style="top: 350px;left: 100px;"><a href="#2">Гогсмід</a></p></li>
+				<li><p class="pointer" style="top: 100px;left: 500px;"><a href="#3">Хогварс</a></p></li>
+				<li><p class="pointer" style="top: 250px;left: 500px;"><a href="#4">Озеро</a></p></li>
+				<li><p class="pointer" style="top: 425px;left: 400px;"><a href="#5">Хогвартс експрес</a></p></li>
+				<li><p class="pointer" style="top:  0px;left: 825px;"><a href="#6">Квіддічне поле</a></p></li>
+				<li><p class="pointer" style="top: 150px;left: 775px;"><a href="#7">Гримуча <br>верба</a></p></li>
+				<li><p class="pointer" style="top: 300px;left: 900px;"><a href="#8" style="padding-left: 20px;">Заборонений<br>ліс</a></p></li>
+				<li><p class="pointer" style="top: 375px;left: 825px;"><a href="#9">Хатина <br>Хагріда</a></p>
+			</ul>
+			<ul class="about">
+				<li class="info" id="1"><div class="close"><a href="#close">❌</a></div><p style="
+			margin-top: 100px;"> 
+			крихтлива хатина (англ. Shrieking Shack) - старий будинок, що стоїть на околиці Хогсміду.
+			З Гоґвортсу в хатину можна потрапити через таємний лаз, що починається під Гремучою вербою. Вона захищає вхід за допомогою своїх довгих і гнучких гілок, руйнуючи все, до чого може дотягнутися. Щоб заспокоїти дерево, необхідно натиснути певний сучок на її стовбурі. Хата стоїть у дикому саду, а її вікна забиті дошками.
+				</p></li>
+				<li class="info" id="2"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 150px;">Гогсмід (англ. Hogsmeade) - маленьке село, розташована недалеко від Хогвартса, єдиний населений пункт в Великобританії, де зовсім немає маглів. Заснована
+в середні століття Енгістом з Вудкрофта.</p></li>
+				<li class="info" id="3"><div class="close"><a href="#close">❌</a></div><img src="images/590.jpg"><p Style="
+			margin-top: 125px;" class="ddd">Хогвартс є єдиною школою магії у Великобританії і Ірландії. У неї приймаються діти, які досягли 11 років і які мають магічними здібностями.
+Навчання триває 7 років. В кінці кожного року здаються іспити, але особливо важливі для майбутнього учнів іспити в кінці п'ятого і сьомого року (СОВ і ЖАБА).</p></li>
+			<li class="info" id="4"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 150px;">Чорне озеро (англ. Great Lake, or Black Lake) - гірське озеро в Шотландії на території Хогвартса. Є одним з магічних перешкод на шляху до Школи 
+			(тому всіх першокурсників доставляють в перший раз в Хогвартс саме по воді) і притулком для численних чарівних мешканців.</p></li>
+			<li class="info" id="5"><div class="close"><a href="#close">❌</a></div><img src="images/1474308320_1_14.jpg"><p Style="
+			margin-top: 125px;" class="ddd">«Хогвартс-експрес» (англ. Hogwarts Express) - спеціальний поїзд, покликаний червоним паровозом, призначений для доставки студентів Хогвартса до місця навчання
+			і назад. Іноді «Хогвартс-експрес» доставляє до місця роботи нових викладачів
+			</p></li>
+			<li class="info" id="6"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 150px;">Квіддічне поле - трибуни глядачів розташовані на вежах, тому що основна дія розгортається в повітрі</p></li>
+			<li class="info" id="7"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 100px;">Гримуча верба (англ. Whomping Willow, зустрічається також переклад «Дракучей верба») - дерево, посаджене в 1971 році на території Хогвартса. За словами професора
+			Снейпа «є рідкісним екземпляром підвиду плакучих верб». Починає бити гілками будь-який предмет або живу істоту, яка мала необережність потрапити
+			в «зону ураження».
+			</p></li>
+			<li class="info" id="8"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 100px;">Заборонений ліс (англ. Forbidden Forest) — величезний ліс, який знаходится на території Гоґвортсу. Свою назву ліс отримав за те що учням заборонено ходити туди без супроводу викладачів, бо в ньому мешкає багато небезпечних істот.
+			</p></li>
+			<li class="info" id="9"><div class="close"><a href="#close">❌</a></div><p Style="
+			margin-top: 100px;">Хатина Хагріда (англ. Hagrid's Hut) — це невеликий будиночок, розташований на сході території Гоґвортсу, між замком та Забороненим лісом, неподалік від Головних воріт. У ньому мешкає шкільний лісничий Рубеус Геґрід.
+			</p></li>
+			</ul>
+		</section>
+		<div class="lefth"></div>
+		<div class="righth"></div>
+		
+		
+	</div>
+	
+</body>
+</html>
+<head>
